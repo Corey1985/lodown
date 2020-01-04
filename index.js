@@ -39,12 +39,13 @@ function typeOf(value){
 module.exports.typeOf = typeOf;
 
 /** 
- * first: If <number> is not given the first value in <array> is returned. If <array> is not given (or is not an array datatype) an 
- *      empty array literal is returned. If <number> & <array> are passed the first element in <array> that matches <number> is returned.
+ * first: If <number> is not given or not a number, the first value in <array> is returned. 
+ *      If <array> is not given (or is not an array datatype) an empty array literal is returned.
+ *      If <number> & <array> are passed the first element in <array> that matches <number> is returned.
  * 
- * @param {Array}: An array datatype.
+ * @param {Array} array: An array datatype.
  * 
- * @param {Number}: A number datatype.
+ * @param {Number} number: A number datatype.
  * 
  * return {Number}: Intended to return the first element in <array> that matches <number.
  */
@@ -74,12 +75,13 @@ function first(array, number){
 module.exports.first = first;
 
 /** 
- * last: If <number> is not given the last value in <array> is returned. If <array> is not given (or is not an array datatype) an 
- *      empty array literal is returned. If <number> & <array> are passed the first element in <array> that matches <number> is returned.
+ * last: If <number> is not given or not a number, the last value in <array> is returned. 
+ *          If <array> is not given (or is not an array datatype) an empty array literal is returned. 
+ *          If <number> & <array> are passed the first element in <array> that matches <number> is returned.
  * 
- * @param {Array}: an array datatype.
+ * @param {Array} array: An array datatype.
  * 
- * @param {Number}: A number datatype.
+ * @param {Number} number: A number datatype.
  *
  * return {Number}: Intended to return the last number in <array> that matches number.
  * 
@@ -108,9 +110,9 @@ module.exports.last = last;
 /** 
  * indexOf: Returns the index of <value> if found in <array>. Negative one (-1) is returned otherwise
  * 
- * @param {Array}: An array datatype.
+ * @param {Array} array: An array datatype.
  * 
- * @param {Number}: A number datatype.
+ * @param {Any value} value: A number datatype.
  * 
  * return {Number}: Returns the index of <value> if it is found in <array>. If not found -1 is returned.
  */
@@ -126,13 +128,13 @@ function indexOf(array, value){
 module.exports.indexOf = indexOf;
 
 /** 
- * contains: Returns a boolean of true if <array> has <value> in it. 
+ * contains: Returns a boolean of true if <array> has <value> in it. False otherwise.
  * 
- * @param {Array}: An array datatype.
+ * @param {Array}array: An array datatype.
  * 
- * @param {Any value}: Any datatype.
+ * @param {Any value} value: Any datatype.
  * 
- * return{boolean}: returns a boolean of true or false. True if <value> is inside <array>.
+ * return{boolean}: Returns a boolean of true or false. True if <value> is inside <array>. False if it is not in <array>.
  */
 
 function contains(array, value){
@@ -167,7 +169,7 @@ module.exports.each = each;
 /**
  * unique: Designed to give an array back with all duplicate elements removed.
  * 
- * @param{Array}: an array datatype.
+ * @param{Array} array: an array datatype.
  * 
  * return{Array}: Returns an array with all later duplicate values removed.
  */
@@ -186,9 +188,9 @@ module.exports.unique = unique;
 /** 
  * filter: Returns a new array for which a function returns true.
  * 
- * @param{Array}: Array datatype.
+ * @param{Array} array: Array datatype.
  * 
- * @param{Func}: A function
+ * @param{Function} func: A function
  * 
  * return{Array}: An array of truthy values
  */
@@ -207,9 +209,9 @@ module.exports.filter = filter;
 /** 
  * reject:Returns a new array for which a function returns false.
  * 
- * @param{Array}: Array datatype.
+ * @param{Array} array: Array datatype.
  * 
- * @param{Func}: A function
+ * @param{function} func: A function
  * 
  * return{Array}: An array of falsy values
  */
@@ -229,9 +231,9 @@ module.exports.reject = reject;
 /** 
  * partition: Creates an array of arrays. The 2 arrays inside of the main array contain truthy & falsy values respectively.
  * 
- * @param{Array}: Array datatype.
+ * @param{Array} array: Array datatype.
  * 
- * @param{Func}: A function
+ * @param{function} func: A function
  * 
  * return{Array}: An array of arrays containing truthy and falsy values seperated in 2 arrays.
  */
@@ -257,9 +259,9 @@ module.exports.partition = partition;
 /** 
  * map: Iterates through An array or object and returns a new array of values altered by a function.
  * 
- * @param{collection}: Either an array or object datatype
+ * @param{An array or object} collection: Either an array or object datatype
  * 
- * @param{func}: A function that iterates.
+ * @param{function} func: A function that iterates.
  * 
  * return: Returns a new array of altered values based on the function passed to parameters.
  */
@@ -276,9 +278,9 @@ module.exports.map = map;
 /** 
  * pluck: Takes an array containing objects and puts only the object's values into a new array.
  * 
- * @param{array}: array datatype.
+ * @param{Array containing objects} array: array datatype.
  * 
- * @param{value}: Any datatype.
+ * @param{Any value} value: Any datatype.
  * 
  * return: An array containing the values from objects.
  */
@@ -293,9 +295,9 @@ module.exports.pluck = pluck;
 /** 
  * every: Returns a boolean true if every element in <collection> is determined to be true by <func>.
  * 
- * @param{Collection}: An object or array.
+ * @param{An array or object} Collection: An object or array.
  * 
- * @param{func}: A function.
+ * @param{function} func: A function.
  * 
  * return: Returns true if every element in <collection> evaluates to true based on <func>. False is returned even one element is false.
  */ 
@@ -322,9 +324,9 @@ module.exports.every = every;
 /** 
  * every: Returns a boolean true if even one element in <collection> is determined to be true by <func>.
  * 
- * @param{Collection}: An object or array.
+ * @param{An array or object} collection: An object or array.
  * 
- * @param{func}: A function.
+ * @param{function} func: A function.
  * 
  * return: Returns true if any element in <collection> that evaluates to true based on <func>. False is returned if all elements are false.
  */ 
@@ -351,13 +353,13 @@ module.exports.some = some;
 /**
  * reduce: Combines the values in an array to one value
  * 
- * @param{array}: Array to be combined.
+ * @param{Array} array: Array to be combined.
  * 
- * @param{func}: Function that combines values
+ * @param{function} func: Function that combines values
  * 
- * @param{seed}: Accumulator that holds all the values. Default is 0.
+ * @param{Number} seed: Accumulator that holds all the values. Default is 0.
  * 
- * return:
+ * return: returns the new array with values combined.
  */
  
 function reduce(array, func, seed){
@@ -370,13 +372,13 @@ function reduce(array, func, seed){
 module.exports.reduce = reduce;
 
 /**
- * extend: intended to combine objects with their key value pairs into one object
+ * extend: Intended to combine objects with their key value pairs into one object
  * 
- * @param{obj1}: one object with one set of key valye pairs
+ * @param{Object} obj1: One object with one set of key valye pairs
  * 
- * @param{...objects}: one or more objects
+ * @param{Array of objects} ...objects: One or more objects put into an array by the rest operator.
  * 
- * return: all objects as one object with all given key value pairs
+ * return: All objects as one object with all given key value pairs
  * 
  */
  
