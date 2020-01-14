@@ -47,7 +47,7 @@ module.exports.typeOf = typeOf;
  * 
  * @param {Number} number: A number datatype.
  * 
- * return {Number}: Intended to return the first element in <array> that matches <number.
+ * @return {Number}: Intended to return the first element in <array> that matches <number>.
  */
 
 function first(array, number){
@@ -77,13 +77,13 @@ module.exports.first = first;
 /** 
  * last: If <number> is not given or not a number, the last value in <array> is returned. 
  *          If <array> is not given (or is not an array datatype) an empty array literal is returned. 
- *          If <number> & <array> are passed the first element in <array> that matches <number> is returned.
+ *          If <number> & <array> are passed the last element in <array> that matches <number> is returned.
  * 
  * @param {Array} array: An array datatype.
  * 
  * @param {Number} number: A number datatype.
  *
- * return {Number}: Intended to return the last number in <array> that matches number.
+ * @return {Number}: Intended to return the last number in <array> that matches number.
  * 
  */
 
@@ -108,13 +108,13 @@ function last(array, number){
 module.exports.last = last;
 
 /** 
- * indexOf: Returns the index of <value> if found in <array>. Negative one (-1) is returned otherwise
+ * indexOf: Returns the index of <value> if found in <array>. Negative one (-1) is returned otherwise.
  * 
  * @param {Array} array: An array datatype.
  * 
  * @param {Any value} value: A number datatype.
  * 
- * return {Number}: Returns the index of <value> if it is found in <array>. If not found -1 is returned.
+ * @return {Number}: Returns the index of <value> if it is found in <array>. If not found -1 is returned.
  */
 
 function indexOf(array, value){
@@ -134,7 +134,7 @@ module.exports.indexOf = indexOf;
  * 
  * @param {Any value} value: Any datatype.
  * 
- * return{boolean}: Returns a boolean of true or false. True if <value> is inside <array>. False if it is not in <array>.
+ * @return{boolean}: Returns a boolean of true or false. True if <value> is inside <array>. False if it is not in <array>.
  */
 
 function contains(array, value){
@@ -171,7 +171,7 @@ module.exports.each = each;
  * 
  * @param{Array} array: an array datatype.
  * 
- * return{Array}: Returns an array with all later duplicate values removed.
+ * @return{Array}: Returns an array with all later duplicate values removed.
  */
  
 function unique(array){
@@ -186,13 +186,13 @@ function unique(array){
 module.exports.unique = unique;
 
 /** 
- * filter: Returns a new array for which a function returns true.
+ * filter: Returns a new array of elements that returns true based on a function.
  * 
  * @param{Array} array: Array datatype.
  * 
  * @param{Function} func: A function
  * 
- * return{Array}: An array of truthy values
+ * @return{Array}: A new array of values evaluated to be true by a function.
  */
 
 function filter(array, func){
@@ -207,13 +207,13 @@ function filter(array, func){
 module.exports.filter = filter;
 
 /** 
- * reject:Returns a new array for which a function returns false.
+ * reject:Returns a new array of elements that returns false based on a function.
  * 
  * @param{Array} array: Array datatype.
  * 
  * @param{function} func: A function
  * 
- * return{Array}: An array of falsy values
+ * @return{Array}: A new array of values evaluated to be false by a function.
  */
 
 function reject(array, func){
@@ -229,13 +229,14 @@ module.exports.reject = reject;
 
 
 /** 
- * partition: Creates an array of arrays. The 2 arrays inside of the main array contain truthy & falsy values respectively.
+ * partition: Creates an array of arrays. The 2 arrays inside of the main array contain 
+ *          truthy & falsy values respectively.
  * 
  * @param{Array} array: Array datatype.
  * 
- * @param{function} func: A function
+ * @param{function} func: A function.
  * 
- * return{Array}: An array of arrays containing truthy and falsy values seperated in 2 arrays.
+ * @return{Array}: An array of arrays containing truthy and falsy values seperated in 2 arrays.
  */
  
 function partition(array, func){
@@ -257,13 +258,13 @@ function partition(array, func){
 module.exports.partition = partition;
 
 /** 
- * map: Iterates through An array or object and returns a new array of values altered by a function.
+ * map: Iterates through An array or object and returns a new array of all values.
  * 
  * @param{An array or object} collection: Either an array or object datatype
  * 
  * @param{function} func: A function that iterates.
  * 
- * return: Returns a new array of altered values based on the function passed to parameters.
+ * @return: Returns a new array of all values from colection.
  */
 
 function map(collection, func){
@@ -282,7 +283,7 @@ module.exports.map = map;
  * 
  * @param{Any value} value: Any datatype.
  * 
- * return: An array containing the values from objects.
+ * @return: A new array containing the values from objects keys.
  */
  
 function pluck(array, value){
@@ -294,12 +295,13 @@ module.exports.pluck = pluck;
 
 /** 
  * every: Returns a boolean true if every element in <collection> is determined to be true by <func>.
+ *      If a function is not passed the boolean false is given. 
  * 
- * @param{An array or object} Collection: An object or array.
+ * @param{An array or object} collection: An object or array.
  * 
  * @param{function} func: A function.
  * 
- * return: Returns true if every element in <collection> evaluates to true based on <func>. False is returned even one element is false.
+ * @return: Returns true if every element in <collection> evaluates to true based on <func>. False is returned even one element is false.
  */ 
  
 function every(collection, func){
@@ -322,13 +324,14 @@ function every(collection, func){
 module.exports.every = every;
 
 /** 
- * every: Returns a boolean true if even one element in <collection> is determined to be true by <func>.
+ * some: Returns a boolean true if even one or more elements in <collection> is determined to be true by <func>.
+ *      If a function is not passed the boolean false is given.  
  * 
  * @param{An array or object} collection: An object or array.
  * 
  * @param{function} func: A function.
  * 
- * return: Returns true if any element in <collection> that evaluates to true based on <func>. False is returned if all elements are false.
+ * @return: Returns true if any element in <collection> that evaluates to true based on <func>. False is returned if all elements are false.
  */ 
  
 function some(collection, func){
@@ -351,23 +354,30 @@ function some(collection, func){
 module.exports.some = some;
  
 /**
- * reduce: Combines the values in an array to one value
+ * reduce: Combines the values from an array to one value.
  * 
  * @param{Array} array: Array to be combined.
  * 
  * @param{function} func: Function that combines values
  * 
- * @param{Number} seed: Accumulator that holds all the values. Default is 0.
+ * @param{Any value} seed: Accumulator that holds all the values. Default is 0.
  * 
- * return: returns the new array with values combined.
+ * @return: Returns the values combined into the same datatype of the seed.
  */
  
-function reduce(array, func, seed){
-    let startValue = seed === undefined ? 1 : seed;
-    for(let i = 0; i < array.length; i++){
-         startValue = func(startValue, array[i], i, array);
+function reduce(array, action, seed){
+    let i = 0;
+    let accumulator;
+    if (seed === undefined){
+        accumulator = array[0];
+        i = 1;
+    } else {
+        accumulator = seed;
     }
-    return startValue;
+    for(; i < array.length; i++) {
+        accumulator = action(accumulator, array[i], i, array);
+    }
+    return accumulator;
 }
 module.exports.reduce = reduce;
 
@@ -378,7 +388,7 @@ module.exports.reduce = reduce;
  * 
  * @param{Array of objects} ...objects: One or more objects put into an array by the rest operator.
  * 
- * return: All objects as one object with all given key value pairs
+ * @return: All objects as one object with all given key value pairs
  * 
  */
  
