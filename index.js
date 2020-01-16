@@ -281,27 +281,27 @@ module.exports.map = map;
  * 
  * @param{Array containing objects} array: array datatype.
  * 
- * @param{Any value} value: Any datatype.
+ * @param{Object keys} value: keys from the object which are strings.
  * 
  * @return: A new array containing the values from objects keys.
  */
  
 function pluck(array, value){
-    return map(array, function(element, index, collection){
+    return map(array, function(element){
         return element[value];
     });
 }
 module.exports.pluck = pluck;
 
 /** 
- * every: Returns a boolean true if every element in <collection> is determined to be true by <func>.
- *      If a function is not passed the boolean false is given. 
+ * every: Returns a boolean true if every element in <collection> is determined to be true by <func>. If even one element is falsy then
+ *  false is returned. If a function is not passed the boolean returned will be false if the value is false and true if it is truthy.
  * 
  * @param{An array or object} collection: An object or array.
  * 
  * @param{function} func: A function.
  * 
- * @return: Returns true if every element in <collection> evaluates to true based on <func>. False is returned even one element is false.
+ * @return: Returns true if every element in <collection> evaluates to true based on <func>. False is returned if even one element is false.
  */ 
  
 function every(collection, func){
@@ -324,8 +324,8 @@ function every(collection, func){
 module.exports.every = every;
 
 /** 
- * some: Returns a boolean true if even one or more elements in <collection> is determined to be true by <func>.
- *      If a function is not passed the boolean false is given.  
+ * some: Returns a boolean true if one or more elements in <collection> is determined to be true by <func>. If a function is not passed 
+ *      the boolean false is given for falsy value and true for truthy values.  
  * 
  * @param{An array or object} collection: An object or array.
  * 
