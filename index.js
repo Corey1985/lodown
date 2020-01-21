@@ -279,9 +279,9 @@ module.exports.map = map;
 /** 
  * pluck: Takes an array containing objects and puts only the object's values into a new array.
  * 
- * @param{Array containing objects} array: array datatype.
+ * @param{Array} array: array datatype.
  * 
- * @param{Object keys} value: keys from the object which are strings.
+ * @param{String} value: keys from the object which are strings.
  * 
  * @return: A new array containing the values from objects keys.
  */
